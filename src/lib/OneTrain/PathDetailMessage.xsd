@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:include schemaLocation="Common_Elements.xsd"/>
+	<xs:element name="PathDetailsMessage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MessageHeader"/>
+				<xs:element ref="MessageStatus"/>
+				<xs:element ref="TypeOfRequest" minOccurs="0"/>
+				<xs:element ref="TypeOfInformation" minOccurs="0"/>
+				<xs:element ref="AdministrativeContactInformation"/>
+				<xs:element name="Identifiers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="PlannedTransportIdentifiers" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="RelatedPlannedTransportIdentifiers" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PathInformation">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="PlannedJourneyLocation" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="PlannedCalendar"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="CFRTrainInfo" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
